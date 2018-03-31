@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Create New Patient Record</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="create_record_css.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class = "container-fluid">
+			<div class = "row bow">
+				<form class="form-container">
+					  <h class = "title" id = "name">Create New Patient</h>
+					  <div class="form-group">
+					    <label for="patientName">Full Name</label>
+					    <input type="text" class="form-control" id="InputName" placeholder="Ex. Jane Doe">
+					  </div>
+					  <div class="form-group">
+					    <label for="patientDOB">Date of Birth</label>
+					    <input type="text" class="form-control" id="InputBday" placeholder="Ex. 11/12/1998">
+					  </div>
+					  <div class="form-group">
+					    <label for="patientNumber">Phone Number</label>
+					    <input type="text" class="form-control" id="InputNumber" placeholder="Ex. 123-456-7890">
+					  </div>
+					  <div class="form-group">
+					    <label for="patientAddress">Permanent Address</label>
+					    <input type="text" class="form-control" id="InputAddress" placeholder="Ex. 46 Berkeley Avenue, Irvine CA 92612">
+					  </div>
+					  <div class="form-group">
+					    <label for="patientNumber">Insurance Provider</label>
+					    <input type="text" class="form-control" id="InputInsurance" placeholder="Ex. Aetna">
+					  </div>
+					  <div class="form-group">
+					    <label for="patientNumber">Insurance Number</label>
+					    <input type="text" class="form-control" id="InputInsuranceNum" placeholder="Ex. 130 643 233">
+					  </div>
+					  <button type="submit" class="btn btn-success btn-block" id="submit">Submit</button>
+					</form>
+				<script>
+					document.getElementById("submit").onclick = function() {getLoginInfo()};
+
+					function getLoginInfo () {
+						var name = document.getElementById("InputName").value;
+						var dob = document.getElementById("InputBday").value;
+						var number = document.getElementById("InputNumber").value;
+						var address = document.getElementById("InputAddress").value;
+						var insurance_p = document.getElementById("InputInsurance").value;
+						var insurance_num = document.getElementById("InputInsuranceNum").value;
+						document.getElementById("name").innerHTML = insurance_num;
+					}
+				</script>
+			</div>
+		</div>
+	</body>
+
+</html>

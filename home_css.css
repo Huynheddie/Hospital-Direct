@@ -10,12 +10,13 @@ body {
 }
 
 .form-container {
-	border: 1px solid #56b9ea;
+	border: 2px solid #e8eaea;
+	border-radius: 5px;
 	padding:120px 80px;
 	margin-top:10vh;
 	-webkit-box-shadow: 0px 0px 97px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 97px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 97px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 97px 0px rgba(0,0,0,0.15);
 }
 
 .lbox {
