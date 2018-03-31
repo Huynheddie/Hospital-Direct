@@ -22,3 +22,7 @@ body {
 .lbox {
 	left: 65%;
 }
+
+.checkbox {
+	font-weight: bold;
+}
