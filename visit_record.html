@@ -54,10 +54,19 @@
 						var bp = document.getElementById("InputBP").value;
 						var temp = document.getElementById("InputTemp").value;
 						var notes = document.getElementById("InputNotes").value;
+<<<<<<< HEAD
 						// var sys = new System();
 						sys.createRecord(ID, height, weight, bp, temp, notes, "admin@ucla.edu")
 						alert("hi");
 						window.location.href='home_page.html';
+=======
+						if(ID && height && weight && bp && temp && notes){
+							window.location.href='home_page.html';
+						}
+						else{
+							alert("Missing fields, please fill in all spaces.");
+						}
+>>>>>>> 9bcdd64e5dec3d51b59755ccea814c691db51436
 					}
 				</script>
 			</div>
@@ -65,4 +74,3 @@
 	</body>
 
 </html>
-<!-- pid, height, weight, blood pressure, temperature, notes -->

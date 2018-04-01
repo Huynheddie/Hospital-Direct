@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Create New Patient Record</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,7 +54,12 @@
 						var insurance_p = document.getElementById("InputInsurance").value;
 						var insurance_num = document.getElementById("InputInsuranceNum").value;
 						// document.getElementById("name").innerHTML = insurance_num;
-						window.location.href='home_page.html';
+						if(name && dob && number && address && insurance_p && insurance_num){
+							window.location.href='home_page.html';
+						}
+						else{
+							alert("Missing fields, please fill in all spaces.");
+						}
 					}
 				</script>
 			</div>
