@@ -10,10 +10,10 @@ class Patient {
 		this.address = address;
 		this.provider = provider;
 		this.insurance_num = insurance_num;
-		this.records[];
+		// this.records[];
 		this.hospital;
 	}
-	constructor(p1) {
+	copyConstructor(p1) {
 		this.id = id_p++;
 		this.name = p1.name;
 		this.dob = p1.dob;
@@ -21,7 +21,7 @@ class Patient {
 		this.address = p1.address;
 		this.provider = p1.provider;
 		this.insurance_num = p1.insurance_num;
-		this.records[] = p1.records;
+		// this.records[] = p1.records;
 		this.hospital;
 	}
 }
@@ -34,10 +34,10 @@ class Hospital {
 		this.address = address;
 		this.username = username;
 		this.password = password;
-		this.patients[];
+		// this.patients[];
 	}
 	receivePatient(p1) {
-		Patient np = new Patient(p1);
+		var np = new Patient(p1);
 		this.patients.push(np);
 	}
 }
@@ -65,20 +65,21 @@ class Transaction {
 
 class System {
 	constructor(){
-		this.allHospitals[];
-		Hospital First = new Hospital("UCLA Medical Center", "310-825-9111", "757 Westwood Plaza, Los Angeles, CA 90095", "admin@ucla.edu", "ucla")
+		// this.allHospitals[];
+		var First = new Hospital("UCLA Medical Center", "310-825-9111", "757 Westwood Plaza, Los Angeles, CA 90095", "admin@ucla.edu", "ucla")
 		this.allHospitals.push(First);
-		Hospital Second = new Hospital("UCI Medical Center", "714-456-7890", "Pavilion 4, 101 The City Dr S, Orange, CA 92868", "admin@uci.edu", "uci")		
+		var Second = new Hospital("UCI Medical Center", "714-456-7890", "Pavilion 4, 101 The City Dr S, Orange, CA 92868", "admin@uci.edu", "uci")		
 		this.allHospitals.push(Second);
 	}
 	createPatient(name, dob, number, address, provider, insurance_num, h_username){
 		var h_index = findRecord(h_username);
-		Patient p1 = new Patient(name, dob, number, address, provider, insurance_num);
+		var p1 = new Patient(name, dob, number, address, provider, insurance_num);
 		allHospitals[h_index].patients.push(p1);
 	}
-	createRecord(id, height, weight, bp, temp, notes, h_username, p_index) {
+	createRecord(id, height, weight, bp, temp, notes, h_username) {
 		var h_index = findRecord(h_username);
-		Record r1 = new Record(id, height, weight, bp, temp, notes);
+		var p_index = findPatient(id, h_username);
+		var r1 = new Record(id, height, weight, bp, temp, notes);
 		allHospitals[h_index].patients[p_index].records.push(r1);
 	}
 	sendRecord(hospital_username, patient){
