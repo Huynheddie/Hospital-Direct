@@ -33,6 +33,7 @@
 					document.getElementById("submit").onclick = function() {checkLogin()};
 					var email_address = document.getElementById("InputEmail").value;
 					var password = document.getElementById("InputPassword").value;
+
 					function getLoginInfo () {
 						document.getElementById("test").innerHTML = email_address;
 					}
@@ -42,7 +43,8 @@
 						var password = document.getElementById("InputPassword").value;
 						if (email_address == "admin@ucla.edu" && password == "ucla") {
 							window.location.assign("home_page.html");
-							// alert("hi")
+						} else if (email_address == "admin@stanford.edu" && password == "stanford") {
+							window.location.assign("home_page.html");	
 						}
 						else {
 							alert("Incorrect login information. Please try again.")
