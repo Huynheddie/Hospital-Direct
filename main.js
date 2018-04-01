@@ -11,6 +11,7 @@ class Patient {
 		this.provider = provider;
 		this.insurance_num = insurance_num;
 		this.records[];
+		this.hospitals[];
 	}
 }
 
@@ -46,3 +47,4 @@ class Transaction {
 		this.hash = '';
 	}
 }
+
