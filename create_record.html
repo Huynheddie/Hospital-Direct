@@ -56,10 +56,11 @@
 						var insurance_p = document.getElementById("InputInsurance").value;
 						var insurance_num = document.getElementById("InputInsuranceNum").value;
 						
-						var sys = new System();
-						sys.createPatient(name, dob,number, address, insurance_p, insurance_num,h_username);
+						var sys = localStorage.getItem('sys');
+						alert(JSON.parse(sys));
+						var xyz = sys.createPatient(name, dob,number, address, insurance_p, insurance_num,h_username);
 
-						alert(JSON.stringify(sys));
+						alert("Please note that the patient's ID is " + xyz + "." + sys);
 
 						if(name && dob && number && address && insurance_p && insurance_num){
 							window.location.href='home_page.html';

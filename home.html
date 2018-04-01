@@ -29,6 +29,7 @@
 					  </div>
 					  <button type="button" class="btn btn-success btn-block" id="submit">Login</button>
 					</form>
+				<script type = "text/javascript" src="main.js"></script>
 				<script>
 					document.getElementById("submit").onclick = function() {checkLogin()};
 					var email_address = document.getElementById("InputEmail").value;
@@ -42,7 +43,8 @@
 						var email_address = document.getElementById("InputEmail").value;
 						var password = document.getElementById("InputPassword").value;
 						localStorage.email = email_address;
-						alert(localStorage.email);
+						var sys = new System();
+						localStorage.setItem('sys', JSON.stringify(sys));
 						if (email_address == "admin@ucla.edu" && password == "ucla") {
 							window.location.assign("home_page.html");
 						} else if (email_address == "admin@uci.edu" && password == "uci") {
