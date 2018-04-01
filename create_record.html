@@ -64,10 +64,15 @@
 						var insurance_num = document.getElementById("InputInsuranceNum").value;
 						
 						var sys = localStorage.getItem('sys');
-						alert(JSON.parse(sys));
-						var xyz = sys.createPatient(name, dob,number, address, insurance_p, insurance_num,h_username);
+						// sys = new System();
+						sys = JSON.parse(sys);
 
-						alert("Please note that the patient's ID is " + xyz + "." + sys);
+						var num = sys.createPatient(name, dob, number, address, insurance_p, insurance_num, h_username);
+
+						alert("Please note that the patient's ID is " + xyz + ".");
+
+						var sys = new System(email_address);
+						localStorage.setItem('sys', JSON.stringify(sys));
 
 						if(name && dob && number && address && insurance_p && insurance_num){
 							window.location.href='home_page.html';

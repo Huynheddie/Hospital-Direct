@@ -43,8 +43,11 @@
 						var email_address = document.getElementById("InputEmail").value;
 						var password = document.getElementById("InputPassword").value;
 						localStorage.email = email_address;
-						var sys = new System();
+
+						var sys = new System(email_address);
 						localStorage.setItem('sys', JSON.stringify(sys));
+
+						// alert(JSON.stringify(sys));
 						if (email_address == "admin@ucla.edu" && password == "ucla") {
 							window.location.assign("home_page.html");
 						} else if (email_address == "admin@uci.edu" && password == "uci") {

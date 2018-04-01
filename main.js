@@ -100,8 +100,8 @@ class System {
 		var receiving_index = this.findRecord(hospital_username);
 		var h_index = this.findRecord(this.h_username);
 		var p_index = this.findPatient(p_id, hospital_username);
-		console.log(receiving_index, h_index, p_index);
-		console.log(this.allHospitals);
+		// console.log(receiving_index, h_index, p_index);
+		// console.log(this.allHospitals);
 		// this.allHospitals[receiving_index].receivePatient(this.allHospitals[h_index].patients[p_index]);
 	}
 	findPatient(patientId, h_username){
