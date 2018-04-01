@@ -27,15 +27,27 @@
 					    <label>
 					      <input type="checkbox">Remember me</label>
 					  </div>
-					  <button type="submit" class="btn btn-success btn-block" id="submit">Submit</button>
+					  <button type="button" class="btn btn-success btn-block" id="submit">Login</button>
 					</form>
 				<script>
-					document.getElementById("submit").onclick = function() {getLoginInfo()};
-
+					document.getElementById("submit").onclick = function() {checkLogin()};
+					var email_address = document.getElementById("InputEmail").value;
+					var password = document.getElementById("InputPassword").value;
 					function getLoginInfo () {
+						document.getElementById("test").innerHTML = email_address;
+					}
+
+					function checkLogin () {
 						var email_address = document.getElementById("InputEmail").value;
 						var password = document.getElementById("InputPassword").value;
-						document.getElementById("test").innerHTML = email_address;
+						if (email_address == "admin@ucla.edu" && password == "ucla") {
+							window.location.assign("home_page.html");
+							// alert("hi")
+						}
+						else {
+							alert("Incorrect login information. Please try again.")
+						}
+						return false;
 					}
 				</script>
 				</div>
