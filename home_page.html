@@ -41,6 +41,9 @@
 				<a href="patient_info.html"><p id = "second" class = "name_hm"></p></a>
 				<a href="patient_info.html"><p id = "third" class = "name_hm"></p></a>
 				<a href="patient_info.html"><p id = "fourth" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "fifth" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "sixth" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "seventh" class = "name_hm"></p></a>
 			</div>
 			<script>
 				var sys = localStorage.getItem('sys');
@@ -55,6 +58,7 @@
 					}
 				var total_patients = sys.allHospitals[h_index].patients.length;
 				--total_patients;
+
 				// var num = sys.allHospitals[h_index].patients[0].records.length;
 				// var minimum = sys.allHospitals[h_index].patients[0].records[num].date;
 				// for (let i = 1; i < total_patients; ++i ) {
@@ -70,6 +74,13 @@
 				document.getElementById("fifth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 4].name;
 				document.getElementById("sixth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 5].name;
 				document.getElementById("seventh").innerHTML = sys.allHospitals[h_index].patients[total_patients - 6].name;
+				document.getElementById("first").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients].name;}
+				document.getElementById("second").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients-1].name;}
+				document.getElementById("third").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients -2].name;}
+				document.getElementById("fourth").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients-3].name;}
+				document.getElementById("fifth").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients-4].name;}
+				document.getElementById("sixth").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients-5].name;}
+				document.getElementById("seventh").onclick = function() {localStorage.p_name = sys.allHospitals[h_index].patients[total_patients -6].name;}
 				localStorage.setItem('sys', JSON.stringify(sys));
 			</script>
 		</div>

@@ -97,7 +97,6 @@
 							alert("There are no patients registered. Please create users.");
 							localStorage.setItem('sys', JSON.stringify(sys));
 						} else {
-							alert(JSON.stringify(sys));
 							var p_index = -1;
 							for (let i = 0; i < total_records; i++) {
 								if (sys.allHospitals[h_index].patients[i].id == ID) {
@@ -114,7 +113,6 @@
 
 							localStorage.setItem('sys', JSON.stringify(sys));
 							alert("User visit record has been created.");
-							alert(JSON.stringify(sys));
 							
 							if(ID && height && weight && bp && temp && notes){
 								window.location.href='home_page.html';
