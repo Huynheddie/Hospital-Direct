@@ -76,3 +76,13 @@ li a:hover:not(.active) {
     font-size: 22px;
     color: black;
 }
+
+a:hover {
+    color: #c7204a;
+    text-decoration: none;
+}
+
+.name_hm:hover:not(.active) {
+    color: #c7204a;
+    text-decoration: none;
+}
