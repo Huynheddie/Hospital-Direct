@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Create Home Page</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="home_page_css.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class = "container-fluid">
+			<div class = "row bow">
+				<form class="form-container">
+					<h class = "title" id = "name">Home Page</h>
+					  <div class="form-group">
+					    <label>To Create a New Patient: </label>
+					    <button type="button" class="btn btn-primary" onclick="window.location.href='create_record.html'">Click Here</button>
+					  </div>
+					  <div class="form-group">
+					    <label>To Create a New Visit: </label>
+					    <button type="button" class="btn btn-primary" onclick="window.location.href='visit_record.html'">Click Here</button>
+					  </div>
+					</form>
+					<script>
+					// document.getElementById("submitNewPatient").onclick = function() {location.href = "create_record.html";};
+					// document.getElementById("submitNewVisit").onclick = function() {location.href = "visit_record.html";};
+				</script>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!-- pid, height, weight, blood pressure, temperature, notes -->
