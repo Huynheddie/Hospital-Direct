@@ -48,3 +48,13 @@ class Transaction {
 	}
 }
 
+class System {
+	constructor(){
+		this.allHospitals[];
+		Hospital First = new Hospital("UCLA Medical Center", "310-825-9111", "757 Westwood Plaza, Los Angeles, CA 90095", "admin@ucla.edu", "ucla")
+		this.allHospitals.push(First);
+		Hospital Second = new Hospital("UCI Medical Center", "714-456-7890", "Pavilion 4, 101 The City Dr S, Orange, CA 92868", "admin@uci.edu", "uci")		
+		this.allHospitals.push(Second);
+	}
+
+}
