@@ -24,28 +24,20 @@
 				<form class="form-container">
 					  <h class = "title" id = "name">Send Patient Data</h>
 					  <div class="form-group">
+					    <label for="hospital">Email Address of Hospital</label>
+					    <input type="text" class="form-control" id="InputHos" placeholder="Ex. admin@ucla.edu">
+					  </div>
+					  <div class="form-group">
 					    <label for="patientID">Patient ID Number</label>
 					    <input type="text" class="form-control" id="InputID" placeholder="Ex. 123456789101213">
 					  </div>
 					  <div class="form-group">
-					    <label for="patientHeight">Height</label>
-					    <input type="text" class="form-control" id="InputHeight" placeholder="Ex. 177 cm">
+					    <label for="patientSecure">Security Code</label>
+					    <input type="text" class="form-control" id="InputSecure" placeholder="Ex. qw12e">
 					  </div>
 					  <div class="form-group">
-					    <label for="patientWeight">Weight</label>
-					    <input type="text" class="form-control" id="InputWeight" placeholder="Ex. 88.7 kg">
-					  </div>
-					  <div class="form-group">
-					    <label for="patientBP">Blood Pressure</label>
-					    <input type="text" class="form-control" id="InputBP" placeholder="Ex. 120/80">
-					  </div>
-					  <div class="form-group">
-					    <label for="patientTemp">Temperature</label>
-					    <input type="text" class="form-control" id="InputTemp" placeholder="Ex. 37 degrees celsius">
-					  </div>
-					  <div class="form-group">
-					    <label for="hospitalpatientInsuranceNumber">Hospital</label>
-					    <input type="text" class="form-control" id="InputHos" placeholder="Ex. Kaiser">
+					    <label for="patientReason">Reason</label>
+					    <input type="textarea" class="form-control" id="InputReason" placeholder="Ex. Patient feels uncomfortable">
 					  </div>
 					  <button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
 					  <button type="button" class="btn btn-success btn-block" onclick="window.location.href='home_page.html'" id="cancel">Cancel</button>
@@ -54,14 +46,11 @@
 					document.getElementById("submit").onclick = function() {getSendInfo()};
 
 					function getSendInfo () {
-						var ID = document.getElementById("InputID").value;
-						var height = document.getElementById("InputHeight").value;
-						var weight = document.getElementById("InputWeight").value;
-						var bp = document.getElementById("InputBP").value;
-						var temp = document.getElementById("InputTemp").value;
-						var notes = document.getElementById("InputNotes").value;
 						var hos = document.getElementById("InputHos").value;
-						// document.getElementById("name").innerHTML = insurance_num;
+						var ID = document.getElementById("InputID").value;
+						var security = document.getElementById("InputSecure").value;
+						var reason = document.getElementById("InputReason").value;
+
 						if(ID && height && weight && bp && temp && notes && hos){
 							window.location.href='home_page.html';
 						}
