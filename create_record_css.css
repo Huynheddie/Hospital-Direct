@@ -29,7 +29,7 @@ body {
 #submit{
 	background-color: #c7204a;
 	border: #c7204a;
-	-webkit-transition-duration: 0.4s; /* Safari */
+	-webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -42,7 +42,7 @@ body {
 #cancel{
 	background-color: #c7204a;
 	border: #c7204a;
-	-webkit-transition-duration: 0.4s; /* Safari */
+	-webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -75,7 +75,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
 }

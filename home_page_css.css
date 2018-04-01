@@ -45,7 +45,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
 }
