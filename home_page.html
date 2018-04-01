@@ -37,13 +37,12 @@
 			</ul>
 			<div class = "row bow">
 				<h1 class = "mid_title">Most Recent Visits</h1>
-				<p id = "first" class = "name_hm"></p>
-				<p id = "second" class = "name_hm"></p>
-				<p id = "third" class = "name_hm"></p>
-				<p id = "fourth" class = "name_hm"></p>
+				<a href="patient_info.html"><p id = "first" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "second" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "third" class = "name_hm"></p></a>
+				<a href="patient_info.html"><p id = "fourth" class = "name_hm"></p></a>
 			</div>
 			<script>
-				alert(JSON.stringify(sys));
 				var sys = localStorage.getItem('sys');
 				sys = JSON.parse(sys);
 				var h_username = localStorage.email;
@@ -68,6 +67,9 @@
 				document.getElementById("second").innerHTML = sys.allHospitals[h_index].patients[total_patients - 1].name;
 				document.getElementById("third").innerHTML = sys.allHospitals[h_index].patients[total_patients - 2].name;
 				document.getElementById("fourth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 3].name;
+				document.getElementById("fifth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 4].name;
+				document.getElementById("sixth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 5].name;
+				document.getElementById("seventh").innerHTML = sys.allHospitals[h_index].patients[total_patients - 6].name;
 				localStorage.setItem('sys', JSON.stringify(sys));
 			</script>
 		</div>

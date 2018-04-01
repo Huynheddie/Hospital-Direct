@@ -98,12 +98,16 @@
 							localStorage.setItem('sys', JSON.stringify(sys));
 						} else {
 							alert(JSON.stringify(sys));
-							var p_index = 0;
+							var p_index = -1;
 							for (let i = 0; i < total_records; i++) {
 								if (sys.allHospitals[h_index].patients[i].id == ID) {
+									alert(sys.allHospitals[h_index].patients[i].id)
 									p_index = i;
 								}
 							}
+							if (p_index == -1) {
+								alert("No user found.");
+							} else {
 							// alert(JSON.stringify(sys.allHospitals[h_index].patients.length));
 							var r1 = new Record(ID, height, weight, bp, temp, notes);
 							sys.allHospitals[h_index].patients[p_index].records.push(r1);
@@ -118,6 +122,7 @@
 							else{
 								alert("Missing fields, please fill in all spaces.");
 							}
+						}
 						}
 					}
 				</script>
