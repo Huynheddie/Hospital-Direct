@@ -54,7 +54,7 @@ class Record {
 		this.bp = bp;
 		this.temp = temp;
 		this.notes = notes;
-		this.date = Date().toString();
+		this.date = Date();
 	}
 }
 

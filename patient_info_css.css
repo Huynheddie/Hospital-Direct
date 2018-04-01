@@ -73,3 +73,7 @@ li a:hover:not(.active) {
 .active {
     background-color: #c7204a;
 }
+
+.visits {
+    text-align: center;
+}

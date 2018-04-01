@@ -88,6 +88,7 @@
 						// var p_index = sys.findPatient(id, h_username);
 						var h_index = 0;
 						var total_records = sys.allHospitals.length;
+						var total_patients = sys.allHospitals[h_index].patients.length;
 						for (let i = 0; i < total_records; i++) {
 							if (sys.allHospitals[i].username == h_username) {
 								h_index = i;
@@ -98,9 +99,8 @@
 							localStorage.setItem('sys', JSON.stringify(sys));
 						} else {
 							var p_index = -1;
-							for (let i = 0; i < total_records; i++) {
+							for (let i = 0; i < total_patients; i++) {
 								if (sys.allHospitals[h_index].patients[i].id == ID) {
-									alert(sys.allHospitals[h_index].patients[i].id)
 									p_index = i;
 								}
 							}

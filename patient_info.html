@@ -22,6 +22,10 @@
 			</ul>
 			<div class = "row bow">
 				<h class = "title" id = "p_name">Patient's visits</h>
+				<p id= "first" class = "visits"></p>
+				<p id= "second" class = "visits"></p>
+				<p id= "third" class = "visits"></p>
+				<p id= "fourth" class = "visits"></p>
 			</div>
 			<script>
 				var h_username = localStorage.email;
@@ -43,6 +47,11 @@
 					}
 				}
 				document.getElementById("p_name").innerHTML = sys.allHospitals[h_index].patients[p_index].name + "'s Visits";
+				document.getElementById("first").innerHTML = "1. " + sys.allHospitals[h_index].patients[p_index].records[0].date;
+				document.getElementById("second").innerHTML = "2. " + sys.allHospitals[h_index].patients[p_index].records[1].date;
+				document.getElementById("third").innerHTML = "3. " + sys.allHospitals[h_index].patients[p_index].records[2].date;
+				document.getElementById("fourth").innerHTML = "4. " + sys.allHospitals[h_index].patients[p_index].records[3].date;
+
 				localStorage.setItem('sys', JSON.stringify(sys));
 				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
 			</script>
