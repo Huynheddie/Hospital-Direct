@@ -34,18 +34,19 @@
 				var h_index = 0;
 				// h_index = sys.findRecord(sys.h_username);
 				var total_records = sys.allHospitals.length;
-				var total_patients = sys.allHospitals[h_index].patients.length;
+				
 				for (let i = 0; i < total_records; i++) {
 					if (sys.allHospitals[i].username == h_username) {
 						h_index = i;
 					}
 				}
+				var total_patients = sys.allHospitals[h_index].patients.length;
 				var p_index = -1;
 				for (let i = 0; i < total_patients; i++) {
 					if (sys.allHospitals[h_index].patients[i].name == localStorage.p_name) {
 						p_index = i;
 					}
-				}
+				};
 				document.getElementById("p_name").innerHTML = sys.allHospitals[h_index].patients[p_index].name + "'s Visits";
 				document.getElementById("first").innerHTML = "1. " + sys.allHospitals[h_index].patients[p_index].records[0].date;
 				document.getElementById("second").innerHTML = "2. " + sys.allHospitals[h_index].patients[p_index].records[1].date;
