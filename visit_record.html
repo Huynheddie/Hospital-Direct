@@ -7,6 +7,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="visit_record_css.css">
+		<script type="text/javascript" src="main.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
@@ -42,22 +43,30 @@
 					  <button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
 					  <button type="button" class="btn btn-success btn-block" onclick="window.location.href='home_page.html'" id="cancel">Cancel</button>
 					</form>
-				<script>
+				<script type="text/javascript" src="main.js">
 					document.getElementById("submit").onclick = function() {getVisitInfo()};
 
 					function getVisitInfo () {
+						alert("hi");
 						var ID = document.getElementById("InputID").value;
 						var height = document.getElementById("InputHeight").value;
 						var weight = document.getElementById("InputWeight").value;
 						var bp = document.getElementById("InputBP").value;
 						var temp = document.getElementById("InputTemp").value;
 						var notes = document.getElementById("InputNotes").value;
+<<<<<<< HEAD
+						// var sys = new System();
+						sys.createRecord(ID, height, weight, bp, temp, notes, "admin@ucla.edu")
+						alert("hi");
+						window.location.href='home_page.html';
+=======
 						if(ID && height && weight && bp && temp && notes){
 							window.location.href='home_page.html';
 						}
 						else{
 							alert("Missing fields, please fill in all spaces.");
 						}
+>>>>>>> 9bcdd64e5dec3d51b59755ccea814c691db51436
 					}
 				</script>
 			</div>
