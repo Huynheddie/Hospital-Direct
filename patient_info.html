@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Patient Info</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="patient_info_css.css">
+		<script type="text/javascript" src="main.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class = "container-fluid">
+			<h class = "header" id = "hospital_name">Welcome to UCI Medical Center</h>
+			<script>
+				var h_username = localStorage.email;
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				var h_index = 0;
+				// h_index = sys.findRecord(sys.h_username);
+				var total_records = sys.allHospitals.length;
+				for (let i = 0; i < total_records; i++) {
+					if (sys.allHospitals[i].username == h_username) {
+						h_index = i;
+					}
+				}
+				localStorage.setItem('sys', JSON.stringify(sys));
+				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
+			</script>
+			 <ul>
+			 	  <li><a href="home_page.html">Home</a></li>
+				  <li><a href="create_record.html">Create a New Patient</a></li>
+				  <li><a href="visit_record.html">Create a New Visit</a></li>
+				  <li><a href="send_data.html">Send Patient Data</a></li>
+			</ul>
+			<div class = "row bow">
+				<h class = "title" id = "name">Patient's visits</h>
+			</div>
+			<script>
+				
+			</script>
+		</div>
+	</body>
+
+</html>
