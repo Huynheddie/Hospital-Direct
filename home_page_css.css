@@ -29,23 +29,30 @@ body {
 }
 
 #patient{
-	position:absolute;
+	position:relative;
     transition: .5s ease;
-    top: 17%;
-    left: 28%;
+    top: 10px;
+    left: 15.5%;
 }
 
 #visit{
-	position:absolute;
+	position:relative;
     transition: .5s ease;
-    top: 17%;
-    left: 40%;
+    top:-39px;
+    left: 40.5%;
+}
+
+#send{
+	position:relative;
+    transition: .5s ease;
+    top: -88px;
+    left: 63%;
 }
 
 #logout{
-	position:absolute;
+	position:relative;
     transition: .5s ease;
-    top: 9.5%;
-    left: 68%;
+    top: -190px;
+    left: 90%;
 }
 
