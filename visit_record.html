@@ -38,7 +38,8 @@
 					    <label for="patientNotes">Additional Notes</label>
 					    <input type="textarea" class="form-control" id="InputNotes" placeholder="Ex. Patient feels nauseous">
 					  </div>
-					  <button type="submit" class="btn btn-success btn-block" id="submit">Submit</button>
+					  <button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
+					  <button type="button" class="btn btn-success btn-block" onclick="window.location.href='home_page.html'" id="cancel">Cancel</button>
 					</form>
 				<script>
 					document.getElementById("submit").onclick = function() {getVisitInfo()};
@@ -50,7 +51,7 @@
 						var bp = document.getElementById("InputBP").value;
 						var temp = document.getElementById("InputTemp").value;
 						var notes = document.getElementById("InputNotes").value;
-						// document.getElementById("ID").innerHTML = insurance_num;
+						window.location.href='home_page.html';
 					}
 				</script>
 			</div>

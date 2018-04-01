@@ -38,7 +38,8 @@
 					    <label for="patientInsuranceNumber">Insurance Number</label>
 					    <input type="text" class="form-control" id="InputInsuranceNum" placeholder="Ex. 130 643 233">
 					  </div>
-					  <button type="submit" class="btn btn-success btn-block" id="submit">Submit</button>
+					  <button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
+					  <button type="button" class="btn btn-success btn-block" onclick="window.location.href='home_page.html'" id="cancel">Cancel</button>
 					</form>
 				<script>
 					document.getElementById("submit").onclick = function() {getLoginInfo()};
@@ -50,7 +51,8 @@
 						var address = document.getElementById("InputAddress").value;
 						var insurance_p = document.getElementById("InputInsurance").value;
 						var insurance_num = document.getElementById("InputInsuranceNum").value;
-						document.getElementById("name").innerHTML = insurance_num;
+						// document.getElementById("name").innerHTML = insurance_num;
+						window.location.href='home_page.html';
 					}
 				</script>
 			</div>
