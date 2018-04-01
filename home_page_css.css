@@ -31,16 +31,19 @@ body {
 #patient{
 	position:relative;
     transition: .5s ease;
+    top: 10px;
 }
 
 #visit{
 	position:relative;
     transition: .5s ease;
+    top: 10px;
 }
 
 #send{
 	position:relative;
     transition: .5s ease;
+    top: 10px;
 }
 
 #logout{
