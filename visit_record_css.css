@@ -26,6 +26,32 @@ body {
 	text-align: left;
 }
 
+#submit{
+	background-color: #c7204a;
+	border: #c7204a;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: white;
+    color: black;
+}
+
+#cancel{
+	background-color: #c7204a;
+	border: #c7204a;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#cancel:hover {
+    background-color: white;
+    color: black;
+}
+
 #InputNotes {
 	padding-bottom: 50px;
 	height: 75px;
@@ -55,6 +81,9 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 li a:hover {
@@ -70,5 +99,5 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #097209;
+    background-color: #c7204a;
 }
