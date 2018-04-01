@@ -3,7 +3,7 @@ var id_h = 1;
 
 class Patient {
 	constructor(name, dob, number, address, provider, insurance_num) {
-		id_p++;
+		id_p;
 		this.id = id_p;
 		this.name = name;
 		this.dob = dob;
@@ -15,7 +15,7 @@ class Patient {
 		this.hospital;
 	}
 	copyConstructor(p1) {
-		id_p++;
+		++id_p;
 		this.id = id_p;
 		this.name = p1.name;
 		this.dob = p1.dob;
@@ -115,8 +115,3 @@ class System {
 	}
 
 }
-var a = new System();
-var xyz = a.createPatient("Eddie", "11-12-1998", "1234", "irvine", "kaiser", "43123123", "admin@ucla.edu");
-a.createRecord("1001", "60", "130", "20/180","60","notes", "admin@ucla.edu");
-a.sendRecord("admin@uci.edu", xyz)
-// console.log(JSON.stringify(a));

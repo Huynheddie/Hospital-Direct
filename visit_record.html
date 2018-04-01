@@ -14,7 +14,22 @@
 	<body>
 
 		<div class = "container-fluid">
-			<h class = "header" id = "name">UCI Medical Center</h>
+			<h class = "header" id = "hospital_name">UCI Medical Center</h>
+			<script>
+				var h_username = localStorage.email;
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				var h_index = 0;
+				// h_index = sys.findRecord(sys.h_username);
+				var total_records = sys.allHospitals.length;
+				for (let i = 0; i < total_records; i++) {
+					if (sys.allHospitals[i].username == h_username) {
+						h_index = i;
+					}
+				}
+				localStorage.setItem('sys', JSON.stringify(sys));
+				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
+			</script>
 			 <ul>
 			 	  <li><a href="home_page.html">Home</a></li>
 				  <li><a href="create_record.html">Create a New Patient</a></li>
@@ -68,18 +83,41 @@
 						// sys = new System();
 						sys = JSON.parse(sys);
 
-						sys.createRecord(ID, height, weight, bp, temp, notes, h_username)
-
-						var sys = new System(email_address);
-						localStorage.setItem('sys', JSON.stringify(sys));
-
-						alert("User visit record has been created.");
-						
-						if(ID && height && weight && bp && temp && notes){
-							window.location.href='home_page.html';
+						// sys.createRecord(ID, height, weight, bp, temp, notes, h_username)
+						// var h_index = sys.findRecord(h_username);
+						// var p_index = sys.findPatient(id, h_username);
+						var h_index = 0;
+						var total_records = sys.allHospitals.length;
+						for (let i = 0; i < total_records; i++) {
+							if (sys.allHospitals[i].username == h_username) {
+								h_index = i;
+							}
 						}
-						else{
-							alert("Missing fields, please fill in all spaces.");
+						if (sys.allHospitals[h_index].patients.length == 0) {
+							alert("There are no patients registered. Please create users.");
+							localStorage.setItem('sys', JSON.stringify(sys));
+						} else {
+							alert(JSON.stringify(sys));
+							var p_index = 0;
+							for (let i = 0; i < total_records; i++) {
+								if (sys.allHospitals[h_index].patients[i].id == ID) {
+									p_index = i;
+								}
+							}
+							// alert(JSON.stringify(sys.allHospitals[h_index].patients.length));
+							var r1 = new Record(ID, height, weight, bp, temp, notes);
+							sys.allHospitals[h_index].patients[p_index].records.push(r1);
+
+							localStorage.setItem('sys', JSON.stringify(sys));
+							alert("User visit record has been created.");
+							alert(JSON.stringify(sys));
+							
+							if(ID && height && weight && bp && temp && notes){
+								window.location.href='home_page.html';
+							}
+							else{
+								alert("Missing fields, please fill in all spaces.");
+							}
 						}
 					}
 				</script>

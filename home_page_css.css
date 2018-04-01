@@ -65,3 +65,12 @@ li a:hover:not(.active) {
 .active {
     background-color: #c7204a;
 }
+
+.mid_title {
+    text-align:center;
+    margin-bottom: 5%;
+}
+
+.name_hm {
+    font-size: 18px;
+}

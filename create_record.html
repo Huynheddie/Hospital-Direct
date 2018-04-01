@@ -13,7 +13,27 @@
 	</head>
 	<body>
 		<div class = "container-fluid">
-			<h class = "header" id = "name">UCI Medical Center</h>
+			<h class = "header" id = "hospital_name">Medical Center</h>
+			<script>
+				var h_username = localStorage.email;
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				var h_index = 0;
+				// h_index = sys.findRecord(sys.h_username);
+				var total_records = sys.allHospitals.length;
+				for (let i = 0; i < total_records; i++) {
+					if (sys.allHospitals[i].username == h_username) {
+						h_index = i;
+					}
+				}
+				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
+			</script>
+			<<!-- script>
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				h_index = sys.findRecord(sys.h_username);
+				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
+			</script> -->
 			 <ul>
 			 	  <li><a href="home_page.html">Home</a></li>
 				  <li><a class="active" href="create_record.html">Create a New Patient</a></li>
@@ -67,11 +87,23 @@
 						// sys = new System();
 						sys = JSON.parse(sys);
 
-						var num = sys.createPatient(name, dob, number, address, insurance_p, insurance_num, h_username);
-
-						alert("Please note that the patient's ID is " + xyz + ".");
-
-						var sys = new System(email_address);
+						// var num = sys.createPatient(name, dob, number, address, insurance_p, insurance_num, h_username);
+						// var h_index = sys.findRecord(h_username);
+						var h_index = 0;
+						var total_records = sys.allHospitals.length;
+						for (let i = 0; i < total_records; i++) {
+							if (sys.allHospitals[i].username == h_username) {
+								h_index = i;
+							}
+						}
+						var counting = parseInt(localStorage.count);
+						counting += 1;
+						id_p += counting;
+						localStorage.count = counting;
+						var p1 = new Patient(name, dob, number, address, insurance_p, insurance_num);
+						sys.allHospitals[h_index].patients.push(p1);
+						var num = p1.id;
+						alert("Please note that the patient's ID is " + num + ".");
 						localStorage.setItem('sys', JSON.stringify(sys));
 
 						if(name && dob && number && address && insurance_p && insurance_num){

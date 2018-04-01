@@ -13,7 +13,22 @@
 	</head>
 	<body>
 		<div class = "container-fluid">
-			<h class = "title" id = "name">Welcome to UCI Medical Center</h>
+			<h class = "title" id = "hospital_name">Welcome to UCI Medical Center</h>
+			<script>
+				var h_username = localStorage.email;
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				var h_index = 0;
+				// h_index = sys.findRecord(sys.h_username);
+				var total_records = sys.allHospitals.length;
+				for (let i = 0; i < total_records; i++) {
+					if (sys.allHospitals[i].username == h_username) {
+						h_index = i;
+					}
+				}
+				localStorage.setItem('sys', JSON.stringify(sys));
+				document.getElementById("hospital_name").innerHTML = sys.allHospitals[h_index].name;
+			</script>
 			 <ul>
 			 	  <li><a class="active" href="home_page.html">Home</a></li>
 				  <li><a href="create_record.html">Create a New Patient</a></li>
@@ -21,11 +36,40 @@
 				  <li><a href="send_data.html">Send Patient Data</a></li>
 			</ul>
 			<div class = "row bow">
-				<form class="form-container">
-					</form>
-					<script>
-				</script>
+				<h1 class = "mid_title">Most Recent Visits</h1>
+				<p id = "first" class = "name_hm"></p>
+				<p id = "second" class = "name_hm"></p>
+				<p id = "third" class = "name_hm"></p>
+				<p id = "fourth" class = "name_hm"></p>
 			</div>
+			<script>
+				alert(JSON.stringify(sys));
+				var sys = localStorage.getItem('sys');
+				sys = JSON.parse(sys);
+				var h_username = localStorage.email;
+				var h_index = 0;
+				var total_records = sys.allHospitals.length;
+					for (let i = 0; i < total_records; i++) {
+						if (sys.allHospitals[i].username == h_username) {
+							h_index = i;
+						}
+					}
+				var total_patients = sys.allHospitals[h_index].patients.length;
+				--total_patients;
+				// var num = sys.allHospitals[h_index].patients[0].records.length;
+				// var minimum = sys.allHospitals[h_index].patients[0].records[num].date;
+				// for (let i = 1; i < total_patients; ++i ) {
+				// 	var num = sys.allHospitals[h_index].patients[i].records.length;
+				// 	if (sys.allHospitals[h_index].patients[i].records[num-1].date.getTime() < min) {
+				// 		minimum = sys.allHospitals[h_index].patients[i].records[num-1].date;
+				// 	}
+				// }
+				document.getElementById("first").innerHTML = sys.allHospitals[h_index].patients[total_patients].name;
+				document.getElementById("second").innerHTML = sys.allHospitals[h_index].patients[total_patients - 1].name;
+				document.getElementById("third").innerHTML = sys.allHospitals[h_index].patients[total_patients - 2].name;
+				document.getElementById("fourth").innerHTML = sys.allHospitals[h_index].patients[total_patients - 3].name;
+				localStorage.setItem('sys', JSON.stringify(sys));
+			</script>
 		</div>
 	</body>
 
