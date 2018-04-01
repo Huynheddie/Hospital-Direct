@@ -41,6 +41,8 @@
 					function checkLogin () {
 						var email_address = document.getElementById("InputEmail").value;
 						var password = document.getElementById("InputPassword").value;
+						localStorage.email = email_address;
+						alert(localStorage.email);
 						if (email_address == "admin@ucla.edu" && password == "ucla") {
 							window.location.assign("home_page.html");
 						} else if (email_address == "admin@uci.edu" && password == "uci") {
